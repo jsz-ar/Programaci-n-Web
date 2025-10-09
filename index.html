@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pizzería La Mazza</title>
-    <style>
-        *{border: 1px solid rgb(0, 0, 0);}
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav>
-            <!-- Estaria bueno que te siga en la pagina -->
-            <img src="https://placehold.co/600x400" alt="La Mazza Pizza a la Piedra Imagotipo    ">
-            <h2>Pizza a la Piedra</h2>
-            <a href="menu.html">Menú</a>
-            <p>Sobre Nosotros</p>
-            <p>Contactanos</p>
-            <p>Ubicación</p>
-            <button>Hacé tu pedido!</button>
+            <ul type="none" id="ulNav">
+            <li><a href="index.html"><img src="fotos/La_Mazza_White.png" alt="Isologo en Blanco de Pizzería La Mazza" id="isologo"></a></li>
+            <li><a href="menu.html">Menú</a></li>
+            <li>Sobre Nosotros</li>
+            <li>Contactanos</li>
+            <li>Ubicación</li>
+            <li id="liBotonPedido"><input type="button" value="HACÉ TU PEDIDO!" class="roboto-l300" id="botonPedido"></li>
+            </ul>
         </nav>
     </header>
     <main>
@@ -26,7 +26,7 @@
         <div>
             <!-- Slider con las promos del momento -->
             <h3>Promos</h3>
-            <img src="https://placehold.co/2500x800" alt="PlaceHolder para imagenes en el fondo del slider"> <!--Aprox medidas-->
+            <img src="https://placehold.co/1920x1080" alt="PlaceHolder para imagenes en el fondo del slider" class="fullCover"> <!--Aprox medidas-->
             <img src="https://placehold.co/500" alt="PlaceHolder para la foto de la comida en el slider">
             <h3>Nombre del/los producto/s</h3>
             <img src="https://placehold.co/600x400?text=Descripción" alt="Descripción de X promo">
@@ -35,31 +35,31 @@
 
         <div>
             <!-- Se -->
-            <img src="https://placehold.co/2500x800" alt="Fondo general">
+            <img src="https://placehold.co/1920x1080" alt="Fondo general" class="fullCover">
             <h3>Tus preferidas</h3>
 
-            <img src="https://placehold.co/2500x800" alt="Foto relacionada con esa pizza">    
+            <img src="https://placehold.co/1920x1080" alt="Foto relacionada con esa pizza" class="fullCover">    
             <h4>Pizza</h4>
             <img src="https://placehold.co/400" alt="Foto de una Pizza">
             <img src="https://placehold.co/600x400?text=Descripción" alt="Descripción de X pizza"> <!-- La idea seria que no aparezcan a menos que pases el mouse por arriba -->
             
-            <img src="https://placehold.co/2500x800" alt="Foto relacionada con esa pizza"> 
+            <img src="https://placehold.co/1920x1080" alt="Foto relacionada con esa pizza" class="fullCover"> 
             <h4>Pizza</h4>
             <img src="https://placehold.co/400" alt="Foto de una Pizza">
             <img src="https://placehold.co/600x400?text=Descripción" alt="Descripción de X pizza">
             
-            <img src="https://placehold.co/2500x800" alt="Foto relacionada con esa pizza"> 
+            <img src="https://placehold.co/1920x1080" alt="Foto relacionada con esa pizza" class="fullCover"> 
             <h4>Pizza</h4>
             <img src="https://placehold.co/400" alt="Foto de una Pizza">
             <img src="https://placehold.co/600x400?text=Descripción" alt="Descripción de X pizza">
             
-            <img src="https://placehold.co/2500x800" alt="Foto relacionada con esa pizza"> 
+            <img src="https://placehold.co/1920x1080" alt="Foto relacionada con esa pizza" class="fullCover"> 
             <h4>Pizza</h4>
             <img src="https://placehold.co/400" alt="Foto de una Pizza">
             <img src="https://placehold.co/600x400?text=Descripción" alt="Descripción de X pizza">
         </div>
         <div>
-            <img src="https://placehold.co/2500x800" alt="Fondo">
+            <img src="https://placehold.co/1920x1080" alt="Fondo" class="fullCover">
             <h3>Diferencial</h3>
             <img src="https://placehold.co/600x400?text=Diferencial" alt="Texto del diferencial">
         </div>
@@ -70,7 +70,6 @@
         </div>
     </main>
     <footer>
-        <img src="https://placehold.co/2500X500/000000/FFF" alt="Fondo del footer"> <!-- Color a elegir -->
         <p>Varias cosas todavia no definidas</p> <!-- Estos despues estarian linkeados a otras cosas -->
         <p>Varias cosas todavia no definidas</p> <!-- Estos despues estarian linkeados a otras cosas -->
         <p>Varias cosas todavia no definidas</p> <!-- Estos despues estarian linkeados a otras cosas -->
@@ -83,7 +82,7 @@
         <img src="https://placehold.co/50" alt="Algo legal (creo)">
     </footer>
 </body>
-<script>
-    
+<script src="main.js">
+
 </script>
 </html>
