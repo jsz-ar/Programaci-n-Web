@@ -47,22 +47,22 @@ header nav {
 /* Main */
 
 /* Slider */
-/* Ahora mismo el slider se ve bastante mal, voy a ver que es lo que debería hacer para arreglarlo */
+
+/* Ok, aprendí que lo que yo quiero es un slider full-bleed*/
 
 .slider-wrapper {
     position: relative;
-    max-width: 48rem; /* Iba a usar píxeles, pero por lo que investigué y entendí, rems sería algo tipo responsive */
-    margin: 0 auto;
+    width: 100vw; /* El vw es viewport width y el 100 es para que ocupe toda la pantalla */
+    max-width: none; /* Lo que estaba acá antes era el problema principal */
+    margin: 0;
 }
 
 .slider {
     display: flex;
-    aspect-ratio: 16 / 9; /* Las imágenes que iba a usar ya eran 16:9, pero así las fuerzo por las dudas */
+    aspect-ratio: 16 / 6.5; /* No me gustaba en 16:9 y no me decido entre 16:6 y 16:7*/
     overflow-x: auto;
     scroll-snap-type: x mandatory; /* Esto crea el efecto slider */
     scroll-behavior: smooth; 
-    box-shadow: 0 1.5rem 3rem -0,75rem #00000025; /* Los hex codes son 6 dígitos, pero en este caso, los dos extras, son la opacidad */
-    border-radius: 0.5rem;
 }
 
 .slider img {
@@ -88,8 +88,16 @@ header nav {
     background-color: #fff;
     opacity: 0.75;
     transition: opacity ease 250ms;
+    scrollbar-width: none; /* Me estaba molestando la scrollbar de antes, por eso busqué cómo sacarla. Esto la saca para algunos navegadores (en realidad creo que solo Firefox) */
+}
+
+/* Según WebKit "WebKit is the web browser engine used by Safari, Mail, App Store, and many other apps on macOS, iOS, and Linux.". Por lo que ví, tiene estas cosas (como ::-webkit-scrollbar) que por decirlo de alguna forma son propiedades que todos los navegadores que usan WebKit aceptan (agarrar esta explicación con pinzas) */
+
+.slider::-webkit-scrollbar { 
+    display: none; /* Y esto es un pedazo de código que agarré que lo saca de otros navegadores */
 }
 
 .slider-nav a:hover { /* Configuración (por así decirlo) para cuándo alguien pase el mouse por encima */
     opacity: 1; /* Entonces pasa del 0.75 de antes, a 1 (100% de opacidad) */
 }
+
