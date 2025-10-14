@@ -15,17 +15,32 @@
     <header>
         <div class="logo">
             <a href="index.html"><img src="fotos/logo.svg" alt="Logo de Atopos Atelier"></a>
+        </div> <!-- En el anterior commit no me dí cuenta que el div no cerraba -->
         <nav>
             <ul type="none" class="ul_nav">
                 <li class="roboto-li">CATÁLOGO</li>
                 <li class="roboto-li">SOBRE NOSOTROS</li>
-                <li><img src="fotos/carrito_empty.svg" alt="Ícono del Carrito" id="carritoIcono" width="30" height="30" ></li>
+                <li><img src="fotos/carrito_empty.svg" alt="Ícono del Carrito" id="carrito-icono" width="30" height="30" ></li>
             </ul>
 
         </nav>
     </header>
-    <main>
 
+    <main>
+        <section class="contenedor"> <!-- Slider hecho siguiendo un video de YouTube | Canal: Skillthrive --> <!-- Yo supongo que si podemos usar Bootstrap y otras cosas que nos mostraron, podemos mirar videos y usar ese código -->
+            <div class="slider-wrapper">
+                <div class="slider">
+                    <img src="fotos/slide_1.jpg" alt="" id="s1">
+                    <img src="fotos/slide_2.jpg" alt="" id="s2">
+                    <img src="fotos/slide_3.jpg" alt="" id="s3">
+                </div>
+                <div class="slider-nav">
+                    <a href="#s1"></a>
+                    <a href="#s2"></a>
+                    <a href="#s3"></a>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
 

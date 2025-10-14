@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 598.58 215.79">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 485.18 174.91">
   <defs>
     <style>
       .cls-1 {
-        letter-spacing: .1em;
-      }
-
-      .cls-2 {
-        letter-spacing: .05em;
-      }
-
-      .cls-3 {
-        letter-spacing: 0em;
-      }
-
-      .cls-4 {
-        font-family: PlayfairDisplay-SemiBold, 'Playfair Display';
-        font-size: 149.99px;
-        font-weight: 600;
-      }
-
-      .cls-5 {
         letter-spacing: -.06em;
       }
 
-      .cls-6 {
-        letter-spacing: .09em;
+      .cls-2 {
+        letter-spacing: .1em;
       }
 
-      .cls-7 {
+      .cls-3 {
+        letter-spacing: .05em;
+      }
+
+      .cls-4 {
         letter-spacing: 0em;
       }
 
-      .cls-8 {
+      .cls-5 {
         font-family: PlayfairDisplay-Regular, 'Playfair Display';
-        font-size: 62.18px;
+        font-size: 50.4px;
+      }
+
+      .cls-5, .cls-6 {
+        fill: #111;
+      }
+
+      .cls-7 {
+        letter-spacing: .09em;
+      }
+
+      .cls-6 {
+        font-family: PlayfairDisplay-SemiBold, 'Playfair Display';
+        font-size: 121.57px;
+        font-weight: 600;
       }
     </style>
   </defs>
-  <text class="cls-4" transform="translate(1.95 128.09)"><tspan class="cls-5" x="0" y="0">A</tspan><tspan class="cls-3" x="88.94" y="0">T</tspan><tspan class="cls-7" x="186.73" y="0">O</tspan><tspan class="cls-3" x="301.77" y="0">POS</tspan></text>
-  <text class="cls-8" transform="translate(156.31 200.81)"><tspan class="cls-2" x="0" y="0">A</tspan><tspan class="cls-1" x="42.28" y="0">TELIE</tspan><tspan class="cls-6" x="245.36" y="0">R</tspan></text>
+  <text class="cls-6" transform="translate(1.58 103.82)"><tspan class="cls-1" x="0" y="0">A</tspan><tspan x="72.09" y="0">T</tspan><tspan class="cls-4" x="151.35" y="0">O</tspan><tspan x="244.6" y="0">POS</tspan></text>
+  <text class="cls-5" transform="translate(126.7 162.76)"><tspan class="cls-3" x="0" y="0">A</tspan><tspan class="cls-2" x="34.27" y="0">TELIE</tspan><tspan class="cls-7" x="198.87" y="0">R</tspan></text>
 </svg>

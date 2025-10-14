@@ -1,3 +1,13 @@
+/* Los comentarios que pongo, son para mí y para que a la persona que califique, se le haga más fácil entender el porqué de algunas cosas que hago */
+/* Probablemente ya saben que hace cada cosa, pero supongo que puede ser útil*/
+
+/* Estaba probando el background color en el header (para la linea de abajo) y me di cuenta que al estar en blanco, no veía que estaba el margen, por eso lo puse */
+
+body {
+    margin: 0px;
+    background-color: #F9FAFB;
+}
+
 /* Header (terminado, por ahora) */
 
 header {
@@ -6,6 +16,9 @@ header {
     justify-content: center;
     align-items: center;
     padding: 16px 0;
+
+    background-color: #F9FAFB; /* Modificación */
+    border-bottom: 1px solid #111111 ; /* Modificación */
 }
 
 .logo {
@@ -16,7 +29,7 @@ header {
 
 header nav {
     position: absolute;
-    right: 20px;
+    right: 20px; /* Lo tira 20px hacia la izquierda */
 }
 
 .ul_nav {
@@ -28,6 +41,55 @@ header nav {
 .roboto-li {
     font-family: "Roboto", sans-serif;
     font-weight: 500;
+    color: #111111;
 }
 
 /* Main */
+
+/* Slider */
+/* Ahora mismo el slider se ve bastante mal, voy a ver que es lo que debería hacer para arreglarlo */
+
+.slider-wrapper {
+    position: relative;
+    max-width: 48rem; /* Iba a usar píxeles, pero por lo que investigué y entendí, rems sería algo tipo responsive */
+    margin: 0 auto;
+}
+
+.slider {
+    display: flex;
+    aspect-ratio: 16 / 9; /* Las imágenes que iba a usar ya eran 16:9, pero así las fuerzo por las dudas */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; /* Esto crea el efecto slider */
+    scroll-behavior: smooth; 
+    box-shadow: 0 1.5rem 3rem -0,75rem #00000025; /* Los hex codes son 6 dígitos, pero en este caso, los dos extras, son la opacidad */
+    border-radius: 0.5rem;
+}
+
+.slider img {
+    flex: 1 0 100%; /* El 1 hace que todas las imagenes tengan el mismo tamaño, el 0 va a hacer que cada imagen use el ancho que necesite, el 100% es el tamaño inicial*/
+    scroll-snap-align: start;
+    object-fit: cover;
+}
+
+.slider-nav {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%; /* Entre el left y el transform, lo centran */
+    transform: translateX(-50%); /* En un momento intenté usar transform, pero me mareé y traté de evitarlo, pero ahora que ya lo usé acá, capaz lo uso después */
+    z-index: 1; /* Por lo que entendí, esto es poner a esta etiqueta, por encima de otras. Parecido a lo que vimos en la clase que había un video que nos explicaba eso del 3D */
+}
+
+.slider-nav a {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover { /* Configuración (por así decirlo) para cuándo alguien pase el mouse por encima */
+    opacity: 1; /* Entonces pasa del 0.75 de antes, a 1 (100% de opacidad) */
+}
