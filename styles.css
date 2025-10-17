@@ -1,8 +1,5 @@
 /* Los comentarios que pongo, son para mí y para que a la persona que califique, se le haga más fácil entender el porqué de algunas cosas que hago */
 /* Probablemente ya saben que hace cada cosa, pero supongo que puede ser útil*/
-/*
-
-/* Estaba probando el background color en el header (para la linea de abajo) y me di cuenta que al estar en blanco, no veía que estaba el margen, por eso lo puse */
 
 body {
     margin: 0px;
@@ -19,8 +16,8 @@ header {
     align-items: center;
     padding: 16px 0;
 
-    background-color: #F9FAFB; /* Modificación */
-    border-bottom: 1px solid #111111 ; /* Modificación */
+    background-color: #F9FAFB;
+    border-bottom: 1px solid #111111 ;
 }
 
 .logo {
@@ -124,14 +121,12 @@ header nav {
 }
 
 @media (min-width: 640px) { /* Me di cuenta que tendría que haber empezado ya con el responsive, después se me va a descuajeringar la página sino */
-    .productos { grid-template-columns: repeat(2, 1fr); } /* Todo esto está en proceso igual */
+    .productos { grid-template-columns: repeat(2, 1fr); } /* Todo esto está en proceso igual, */
 }
 
-/* Quería volver para atrás y empezar el responsive del header y el slider, pero me parece más importante seguir, y después cambiar el header y el slider */
+/* Volví para atrás a hacer el slider y todo el resto responsive */
 
-@media (min-width: 1024px) {
-    .productos { grid-template-columns: repeat(4, 1fr); } 
-}
+
 
 .articulo {
     background:#ffffff;
@@ -177,12 +172,45 @@ header nav {
 
 /* Sobre nosotros */
 
+#sobre-nosotros {
+    position: relative;
+}
+
+#fondo-sn {
+    width: 100vw;
+    overflow: hidden;
+}
+
+#imagen-sn {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#superponer-sn {
+    position: absolute;
+    top: 130px;
+    left: 0;
+    right: 0;
+}
+
 #h3-sn {
     font-family: "Playfair Display", serif;
     font-style: italic;
-    font-weight: 500;
+    font-weight: 800;
     font-size: 40px;
-    color: #111111;
+    color: #F9FAFB;
     display: flex;
     justify-content: center;
 }
+
+.p-sn {
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    color: #F9FAFB;
+    display: flex;
+    justify-content: center;
+    
+}
+
+/* Responsive */
