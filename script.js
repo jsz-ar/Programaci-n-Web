@@ -49,7 +49,7 @@ function agregarProducto(idBoton) {
         });
     }
 
-    // Agregar lo que sería obtenerProductos cuando termine con esa
+    obtenerProductos()
     abrirCarrito() // La idea sería que el carrito se abra cuando uno agrega un producto
     console.log(carrito);
 }
@@ -62,13 +62,46 @@ function eliminarProducto(id) {
     
     carrito = nuevoCarrito
     console.log(carrito)
-    // Agregar obtenerProductos
+    obtenerProductos()
 }
 
 function vaciarCarrito() {
     carrito = [];
-    // Agregar obtenerProductos
+    obtenerProductos()
     console.log(carrito) // No hay mucho misterio tampoco...
 }
 
-// Para el próximo commit voy a hacer obtenerProductos para empezar a ponerla en cada función
+function obtenerProductos() { // No es la misma que usé en el parcial, pero está adaptada para este contexto
+    listaCarrito.innerHTML = "";
+
+    if (carrito.length == 0) {
+        let li = document.createElement("li")
+        li.className = "item"
+        li.innerHTML = '<div class="item-titulo">Tu carrito está vacío</div>';
+        listaCarrito.appendChild(li)
+    } else {
+        for (let i = 0; i < carrito.length; i++) {
+        let item = carrito[i]
+        let totalLinea = item.precio * item.cantidad;
+
+        let li = document.createElement("li");
+        li.className = "item";
+        li.setAttribute("data-id", item.id);
+
+        li.innerHTML =
+            '<div class="item-titulo">' + item.nombre + '</div>' +
+            '<div class="item-eliminar">' +
+            '<input class="btn btn-eliminar" type="button" value="🗑️">' +
+            '</div>' +
+            '<div class="item-controles">' +
+            '<input class="qty-btn btn-restar" type="button" value="−">' +
+            '<div class="qty-badge">' + item.cantidad + '</div>' +
+            '<input class="qty-btn btn-sumar" type="button" value="+">' +
+            '<div class="price-each">$' + item.precio + ' c/u</div>' +
+            '</div>' +
+            '<div class="item-total">$' + totalLinea + '</div>';
+
+        listaCarrito.appendChild(li);
+        }
+    }
+}
