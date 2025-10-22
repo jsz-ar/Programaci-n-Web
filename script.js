@@ -158,7 +158,7 @@ listaCarrito.addEventListener("click", (e) => {
     }
 });
 
-function mostrarNotificacion(mensaje) { // Podría haber usado una de Bootstrap
+function mostrarNotificacion(mensaje) {
     const notif = document.createElement('div');
     notif.className = 'notificacion';
     notif.textContent = mensaje;
@@ -186,3 +186,5 @@ function finalizarCompra() {
 if (botonFinalizar) botonFinalizar.addEventListener('click', finalizarCompra);
 
 });
+
+// Mi idea en general era usar un poco Bootstrap, pero al final no
