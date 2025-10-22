@@ -120,13 +120,7 @@ header nav {
     grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
-@media (min-width: 640px) { /* Me di cuenta que tendría que haber empezado ya con el responsive, después se me va a descuajeringar la página sino */
-    .productos { grid-template-columns: repeat(2, 1fr); } /* Todo esto está en proceso igual, */
-}
-
-/* Volví para atrás a hacer el slider y todo el resto responsive */
-
-
+/* Al final me decidí que el responsive al final de todo */
 
 .articulo {
     background:#ffffff;
