@@ -22,7 +22,7 @@
         </div>
         <nav>
             <ul type="none" class="ul_nav">
-                <li class="roboto-li">CATÁLOGO</li>
+                <li class="roboto-li">BEST SELLERS</li>
                 <li class="roboto-li">SOBRE NOSOTROS</li>
                 <li><img src="fotos/carrito_empty.svg" alt="Ícono del Carrito" id="carrito-icono" width="30" height="30" ></li>
             </ul>
@@ -50,47 +50,43 @@
             <ul type="none" class="productos">
                 <li>
                     <article class="articulo">
-                        <a class="a-link-bs">
-                            <div class="foto-articulo">
-                                <img src="fotos/pink_gold_whistle.png" alt="Foto del Atopos 24k Pink Gold Whistle"> <!-- Todo en inglés porque en Atopos nos la re creemos (porque queda mejor que "Silbato de oro rosa Atopos")-->
-                            </div>
-                            <h3 class="h3bs-arts">Atopos 24k Pink Gold Whistle</h3>
-                            <p class="precio-art">$350</p>
-                        </a>
+                        <div class="foto-articulo">
+                            <img src="fotos/pink_gold_whistle.png" alt="Foto del Atopos 24k Pink Gold Whistle"> <!-- Todo en inglés porque en Atopos nos la re creemos (porque queda mejor que "Silbato de oro rosa Atopos")-->
+                        </div>
+                        <h3 class="h3bs-arts">Atopos 24k Pink Gold Whistle</h3>
+                        <p class="precio-art">$350</p>
                     </article>
+                    <input type="button" value="Agregar al Carrito" class="botones-articulos" id="whistle-boton">
                 </li>
                 <li>
                     <article class="articulo">
-                        <a class="a-link-bs">
-                            <div class="foto-articulo">
-                                <img src="fotos/paper clip.png" alt="Foto del Atopos Silver Paper Clip">
-                            </div>
-                            <h3 class="h3bs-arts">Atopos Silver Paper Clip</h3>
-                            <p class="precio-art">$185</p>
-                        </a>
+                        <div class="foto-articulo">
+                            <img src="fotos/paper clip.png" alt="Foto del Atopos Silver Paper Clip">
+                        </div>
+                        <h3 class="h3bs-arts">Atopos Silver Paper Clip</h3>
+                        <p class="precio-art">$185</p>
                     </article>
+                    <input type="button" value="Agregar al Carrito" class="botones-articulos" id="clip-boton">
                 </li>
                 <li>
                     <article class="articulo">
-                        <a class="a-link-bs">
-                            <div class="foto-articulo">
-                                <img src="fotos/atopos_brick.png" alt="Foto del Atopos Brick">
-                            </div>
-                            <h3 class="h3bs-arts">Atopos Brick</h3>
-                            <p class="precio-art">$230</p>
-                        </a>
+                        <div class="foto-articulo">
+                            <img src="fotos/atopos_brick.png" alt="Foto del Atopos Brick">
+                        </div>
+                        <h3 class="h3bs-arts">Atopos Brick</h3>
+                        <p class="precio-art">$230</p>
                     </article>
+                    <input type="button" value="Agregar al Carrito" class="botones-articulos" id="brick-boton">
                 </li>
                 <li>
                     <article class="articulo">
-                        <a class="a-link-bs">
-                            <div class="foto-articulo">
-                                <img src="fotos/golden_jenga.png" alt="Foto del Atopos 24k Golden Jenga"> <!-- Muy mala la foto -->
-                            </div>
-                            <h3 class="h3bs-arts">Atopos 24k Golden Jenga</h3> <!-- No quiero agregar una imagen al slider de todos los items y se me ocurrio una frase, por eso la pongo acá: Atopos 24k Golden Jenga, jugar al jenga nunca fue tan difícil. -->
-                            <p class="precio-art">$2772</p>
-                        </a>
+                        <div class="foto-articulo">
+                            <img src="fotos/golden_jenga.png" alt="Foto del Atopos 24k Golden Jenga"> <!-- Muy mala la foto -->
+                        </div>
+                        <h3 class="h3bs-arts">Atopos 24k Golden Jenga</h3> <!-- No quiero agregar una imagen al slider de todos los items y se me ocurrio una frase, por eso la pongo acá: Atopos 24k Golden Jenga, jugar al jenga nunca fue tan difícil. -->
+                        <p class="precio-art">$2772</p>
                     </article>
+                    <input type="button" value="Agregar al Carrito" class="botones-articulos" id="jenga-boton">
                 </li>
             </ul> <!-- Me faltaba este cierre -->
         </section>
@@ -112,6 +108,31 @@
 
         </div>
     </footer>
+        <!-- Esta estructura probablemente sea la final y quede así. Igual hay demasiados divs (creo)-->
+        <div id="carrito" class="carrito">
+        <div class="carrito-header">
+            <h2>Carrito</h2>
+            <input type="button" value="X" class="boton" id="cerrar-carrito">
+        </div>
+
+        <ul id="lista-carrito" class="carrito-items"></ul>
+
+        <div class="carrito-resumen">
+            <div class="resumen-linea">
+            <div>Subtotal</div>
+            <div id="subtotal">$0</div>
+            </div>
+            <div class="resumen-linea total">
+            <div><b>Total</b></div>
+            <div id="total"><b>$0</b></div>
+            </div>
+            <div class="carrito-acciones">
+            <input type="button" value="Vaciar carrito" class="boton" id="vaciar-carrito">
+            <input type="button" value="Finalizar compra" class="boton" id="finalizar-compra">
+            </div>
+        </div>
+        </div>
+
 </body>
 <script src="script.js">
 
