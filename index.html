@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atopos Atelier</title>
+    <link rel="icon" href="/fotos/icono_navegador.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,9 +29,9 @@
         <section class="contenedor"> <!-- Slider hecho siguiendo un video de YouTube | Canal: Skillthrive --> <!-- Yo supongo que si podemos usar Bootstrap y otras cosas que nos mostraron, podemos mirar videos y usar ese código -->
             <div class="slider-wrapper">
                 <div class="slider">
-                    <img src="fotos/slide_1.jpg" alt="" id="s1">
-                    <img src="fotos/slide_2.jpg" alt="" id="s2"> <!-- Horrible esta slide -->
-                    <img src="fotos/slide_3.jpg" alt="" id="s3">
+                    <img src="fotos/slide_1.jpg" alt="Slide 1 del Slider, Atopos Brick" id="s1">
+                    <img src="fotos/slide_2.jpg" alt="Slide 2 del Slider, Atopos Silver Paper Clip" id="s2">
+                    <img src="fotos/slide_3.jpg" alt="Slide 3 del Slider, Atopos 24k Pink Gold Whistle" id="s3">
                 </div>
                 <div class="slider-nav">
                     <a href="#s1"></a>
@@ -98,33 +99,32 @@
         </section>
     </main>
     <footer>
-        <div class="">
+        <div class="footer">
 
         </div>
     </footer>
-        <!-- Esta estructura probablemente sea la final y quede así. Igual hay demasiados divs (creo)-->
         <div id="carrito" class="carrito">
-        <div class="carrito-header">
-            <h2>Carrito</h2>
-            <input type="button" value="X" class="boton" id="cerrar-carrito">
-        </div>
+            <div class="carrito-header">
+                <h2 class="roboto-simple">Carrito</h2>
+                <input type="button" value="X" class="boton" id="cerrar-carrito">
+            </div>
 
-        <ul id="lista-carrito" class="carrito-items"></ul>
+        <ul class="carrito-items" id="lista-carrito"></ul>
 
-        <div class="carrito-resumen">
-            <div class="resumen-linea">
-            <div>Subtotal</div>
-            <div id="subtotal">$0</div>
+            <div class="carrito-resumen">
+                <div class="resumen-linea">
+                    <div class="roboto-simple">Subtotal</div>
+                <div id="subtotal">$0</div>
+                </div>
+                <div class="resumen-linea total">
+                    <div><b class="roboto-simple">Total</b></div>
+                    <div id="total"><b class="roboto-simple">$0</b></div>
+                </div>
+                <div class="carrito-acciones">
+                    <input type="button" value="Vaciar carrito" class="roboto-simple" class="boton" id="vaciar-carrito">
+                    <input type="button" value="Finalizar compra" class="roboto-simple" class="boton" id="finalizar-compra">
+                </div>
             </div>
-            <div class="resumen-linea total">
-            <div><b>Total</b></div>
-            <div id="total"><b>$0</b></div>
-            </div>
-            <div class="carrito-acciones">
-            <input type="button" value="Vaciar carrito" class="boton" id="vaciar-carrito">
-            <input type="button" value="Finalizar compra" class="boton" id="finalizar-compra">
-            </div>
-        </div>
         </div>
 
 </body>
