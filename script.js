@@ -1,3 +1,5 @@
+// Dejé de lado el CSS porque quiero tener  el CRUD hecho antes que nada, además, me empecé a cansar del CSS e intentar que todo esté en el lugar que quiero
+
 let carritoPanel = document.getElementById("carrito");
 let iconoCarrito = document.getElementById("carrito-icono");
 let btnCerrar = document.getElementById("cerrar-carrito");
@@ -49,4 +51,24 @@ function agregarProducto(idBoton) {
 
     // Agregar lo que sería obtenerProductos cuando termine con esa
     abrirCarrito() // La idea sería que el carrito se abra cuando uno agrega un producto
+    console.log(carrito);
 }
+
+function eliminarProducto(id) {
+    let nuevoCarrito = []
+    for (let i = 0; i < carrito.length; i++) {
+        if (carrito[i].id != id) nuevoCarrito.push(carrito[i]);
+    }
+    
+    carrito = nuevoCarrito
+    console.log(carrito)
+    // Agregar obtenerProductos
+}
+
+function vaciarCarrito() {
+    carrito = [];
+    // Agregar obtenerProductos
+    console.log(carrito) // No hay mucho misterio tampoco...
+}
+
+// Para el próximo commit voy a hacer obtenerProductos para empezar a ponerla en cada función
