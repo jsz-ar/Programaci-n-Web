@@ -656,9 +656,9 @@ header nav {
         padding: 12px 0;
     }
 
-    .carrito-acciones {
+    .carrito-acciones { /* Esta corrección es porque en los dispositvos que probé (reales, no desde la compu con el responsive) hay un problema: Los celulares suelen tener botones de navegación abajo, o los navegadores tienen sus propios botones. Entonces, no se ve el botón de finalizar compra*/
         bottom: auto;
-        padding-bottom: 30px;
+        padding-bottom: 90px;
     }
 }
 
