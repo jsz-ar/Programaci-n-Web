@@ -6,7 +6,6 @@ let carritoPanel = document.getElementById("carrito");
 let iconoCarrito = document.getElementById("carrito-icono");
 let botonCerrar = document.getElementById("cerrar-carrito");
 let listaCarrito = document.getElementById("lista-carrito");
-let subtotalEl = document.getElementById("subtotal");
 let totalEl = document.getElementById("total");
 let botonVaciar =  document.getElementById("vaciar-carrito");
 let botonFinalizar = document.getElementById("finalizar-compra");
@@ -90,7 +89,7 @@ function obtenerProductos() { // No es la misma que usé en el parcial, pero est
         li.className = "item";
         li.setAttribute("data-id", item.id);
 
-        li.innerHTML = // voy a cambiar lo que sea btn por boton y la posicion de los atributos
+        li.innerHTML = 
             '<div class="item-titulo">' + item.nombre + '</div>' +
             '<div class="item-eliminar">' +
             '<input class="boton boton-eliminar" type="button" value="Eliminar">' +
@@ -106,13 +105,12 @@ function obtenerProductos() { // No es la misma que usé en el parcial, pero est
         listaCarrito.appendChild(li);
         }
     }
-    let subtotal = 0;
+    let total = 0;
     for (let i = 0; i < carrito.length; i++) {
-        subtotal = subtotal + (carrito[i].precio * carrito[i].cantidad);
+        total = total + (carrito[i].precio * carrito[i].cantidad);
     }
-    subtotalEl.textContent = "$" + subtotal;
-    totalEl.textContent = "$" + subtotal;
-
+    totalEl.textContent = "$" + total;
+    
     let deshabilitar = carrito.length == 0;
     // Creo que este era el error
     if (botonVaciar) botonVaciar.disabled = deshabilitar;

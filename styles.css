@@ -42,10 +42,15 @@ header nav {
     gap: 36px;
 }
 
+.ul_nav a {
+    text-decoration: none;
+}
+
 .roboto-li {
     font-family: "Roboto", sans-serif;
     font-weight: 500;
     color: #111111;
+    cursor: pointer;
 }
 
 /* Main */
@@ -121,7 +126,7 @@ header nav {
     display: grid;
     gap: 18px;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    align-items: start; /* IMPORTANT: alinea items al tope */
+    align-items: start;
     padding: 0 18px;
     margin: 0;
 }
@@ -131,7 +136,6 @@ header nav {
     flex-direction: column;
 }
 
-/* forzar que el artículo ocupe el espacio y que las fotos tengan la misma altura */
 .articulo {
     display: flex;
     flex-direction: column;
@@ -154,7 +158,7 @@ header nav {
 
 .foto-articulo img {
     width: 100%;
-    height: 220px; /* misma altura para todas las miniaturas */
+    height: 220px;
     object-fit: cover;
     display: block;
     border-radius: 8px;
@@ -225,9 +229,9 @@ header nav {
 #imagen-sn {
     display: block;
     width: 100%;
-    height: 380px;           /* altura base */
-    object-fit: cover;       /* mantiene cobertura sin distorsionar */
-    object-position: center; /* centra la zona visible */
+    height: 380px;
+    object-fit: cover;
+    object-position: center;
     filter: brightness(0.7);
 }
 
@@ -428,13 +432,21 @@ header nav {
 .resumen-linea.total {
     font-size: 16px;
     font-weight: 800;
+    margin-bottom: 16px;
 }
 
 .carrito-acciones {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    margin-top: 8px;
+    gap: 12px;
+    padding: 16px;
+    position: sticky;
+    bottom: 0;
+    background: #F9FAFB;
+    border-top: 1px solid #E5E7EB;
+    margin-top: auto;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .carrito-acciones .boton {
@@ -466,7 +478,7 @@ header nav {
 #vaciar-carrito,
 #finalizar-compra {
     width: 100%;
-    padding: 12px;
+    padding: 16px;
     margin-top: 8px;
     border: none;
     border-radius: 8px;
@@ -475,6 +487,7 @@ header nav {
     transition: all 0.2s ease;
     font-family: "Roboto", sans-serif;
     font-weight: 500;
+    height: 50px;
 }
 
 #vaciar-carrito {
@@ -553,6 +566,20 @@ header nav {
     }
 
     header {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header nav {
+        position: static;
+        margin-right: 20px;
+    }
+
+    .logo {
+        margin-left: 20px;
+    }
+
+    header {
         padding: 18px 0;
     }
 }
@@ -598,6 +625,10 @@ header nav {
         font-size: 13px;
     }
 
+    .ul_nav a.roboto-li {
+        display: none;
+    }
+
     .productos {
         grid-template-columns: repeat(1, minmax(0, 1fr));
         padding: 0 14px;
@@ -612,12 +643,18 @@ header nav {
     .p-sn { font-size: 16px; }
 
     .carrito {
-        width: 100%;
-        right: -100%;
-        border-left: none;
-        padding: 16px;
+        right: 0;
+        left: 0;
+        width: auto;
+        height: 100vh;
+        z-index: 1500;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
     }
-    .carrito.abierto { right: 0; }
+    .carrito.abierto {
+        transform: translateX(0);
+    }
+
     .carrito-resumen { padding: 12px 0; }
 }
 
