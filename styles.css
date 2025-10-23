@@ -652,7 +652,14 @@ header nav {
         transform: translateX(0);
     }
 
-    .carrito-resumen { padding: 12px 0; }
+    .carrito-resumen {
+        padding: 12px 0;
+    }
+
+    .carrito-acciones {
+        bottom: auto;
+        padding-bottom: 30px;
+    }
 }
 
 .carrito-resumen {
