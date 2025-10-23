@@ -328,18 +328,13 @@ header nav {
     box-shadow: 0 2px 8px #00000014;
 }
 
-.carrito {
-    overflow-y: auto; /* Permitir scroll */
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    padding-bottom: 0; /* Evitar padding extra al final */
-}
-
 .carrito-items {
-    flex: 1 1 auto;
+    flex: 0 1 auto;
+    max-height: calc(100vh - 200px);
     overflow-y: auto;
-    max-height: calc(100vh - 200px); /* Altura máxima calculada */
+    padding: 10px 0;
+    margin: 10px -20px;
+    padding: 0 20px;
 }
 
 .item {
@@ -446,7 +441,7 @@ header nav {
     bottom: 0;
     background: #F9FAFB;
     border-top: 1px solid #E5E7EB;
-    margin-top: auto;
+    margin-top: 20px;
     width: 100%;
     box-sizing: border-box;
 }
@@ -481,7 +476,7 @@ header nav {
 #finalizar-compra {
     width: 100%;
     padding: 16px;
-    margin-top: 8px;
+    margin-top: 0px;
     border: none;
     border-radius: 8px;
     font-size: 14px;
@@ -646,44 +641,56 @@ header nav {
     .p-sn { font-size: 16px; }
 
     .carrito {
-        overflow-y: auto; 
         display: flex;
         flex-direction: column;
-        height: 100vh;
-        padding-bottom: 0; 
+        padding: 20px;
     }
 
     .carrito-items {
-        flex: 1 1 auto;
+        flex: 0 1 auto;
+        max-height: calc(100vh - 200px); 
         overflow-y: auto;
-        max-height: calc(100vh - 200px);
     }
 
     .carrito-resumen {
-        flex: 0 0 auto;
         margin-top: 0;
+        padding: 12px 0;
         position: relative;
-        padding: 12px 16px;
+        flex: 0 0 auto;
     }
 
     .carrito-acciones {
         position: relative;
-        padding: 16px;
+        bottom: 0;
         margin-top: 0;
+        padding: 16px;
     }
-}
 
-.carrito-resumen {
-    padding-bottom: env(safe-area-inset-bottom, 20px);
-}
+    .carrito {
+        right: 0;
+        left: 0;
+        width: auto;
+        height: 100vh;
+        z-index: 1500;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
+    .carrito.abierto {
+        transform: translateX(0);
+    }
 
-.botones-articulos, #vaciar-carrito, #finalizar-compra, .qty-btn, .boton {
-    min-height: 40px;
-    touch-action: manipulation;
-}
+    .carrito-resumen {
+        margin-top: 0;
+        padding: 12px 0;
+        position: relative;
+        bottom: auto;
+    }
 
-.foto-articulo img {
-    width: 100%;
-    height: auto;
+    .carrito-acciones {
+        position: relative;
+        margin-top: 0;
+        padding: 16px;
+    }
+
 }
 
