@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-// Dejé de lado el CSS porque quiero tener  el CRUD hecho antes que nada, además, me empecé a cansar del CSS e intentar que todo esté en el lugar que quiero
-
 let carritoPanel = document.getElementById("carrito");
 let iconoCarrito = document.getElementById("carrito-icono");
 let botonCerrar = document.getElementById("cerrar-carrito");
@@ -18,9 +16,6 @@ const productos = {
 };
 
 let carrito = [];
-
-// Estas dos funciones son para abrir/cerrar el carrito
-// Igual hasta quee no haga las otras funciones, no tienen mucho snetido
 
 const abrirCarrito  = () => carritoPanel && carritoPanel.classList.add("abierto");
 const cerrarCarrito = () => carritoPanel && carritoPanel.classList.remove("abierto");
@@ -51,8 +46,7 @@ function agregarProducto(idBoton) {
     }
 
     obtenerProductos()
-    abrirCarrito() // La idea sería que el carrito se abra cuando uno agrega un producto
-    console.log(carrito);
+    abrirCarrito()
 }
 
 function eliminarProducto(id) {
@@ -62,14 +56,12 @@ function eliminarProducto(id) {
     }
     
     carrito = nuevoCarrito
-    console.log(carrito)
     obtenerProductos()
 }
 
 function vaciarCarrito() {
     carrito = [];
     obtenerProductos()
-    console.log(carrito) // No hay mucho misterio tampoco...
 }
 
 function obtenerProductos() { // No es la misma que usé en el parcial, pero está adaptada para este contexto
@@ -112,7 +104,6 @@ function obtenerProductos() { // No es la misma que usé en el parcial, pero est
     totalEl.textContent = "$" + total;
     
     let deshabilitar = carrito.length == 0;
-    // Creo que este era el error
     if (botonVaciar) botonVaciar.disabled = deshabilitar;
     if (botonFinalizar) botonFinalizar.disabled = deshabilitar;
 
@@ -122,7 +113,7 @@ function cambiarCantidad(id, cambio) {
     for (let i = 0; i < carrito.length; i++) {
         if (carrito[i].id === id) {
         let nueva = carrito[i].cantidad + cambio
-        if (nueva >= 1) {                          // No dejo que sea 0 porque prefiero que se use un botón para sacarlo
+        if (nueva >= 1) { // No dejo que sea 0 porque prefiero que se use un botón para sacarlo
             carrito[i].cantidad = nueva;
         }
         break
@@ -131,7 +122,6 @@ function cambiarCantidad(id, cambio) {
     obtenerProductos()
 }
 
-// Ahora si, lo que me estaba faltando, conectar el botón agregar al carrito de cada item con el carrito
 document.querySelectorAll(".botones-articulos").forEach(boton => {
     boton.addEventListener("click", () => {
         agregarProducto(boton.id);
@@ -184,5 +174,3 @@ function finalizarCompra() {
 if (botonFinalizar) botonFinalizar.addEventListener('click', finalizarCompra);
 
 });
-
-// Mi idea en general era usar un poco Bootstrap, pero al final no

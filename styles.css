@@ -12,7 +12,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Header (terminado, por ahora) */
+/* Header */
 
 header {
     position: relative;
@@ -55,9 +55,7 @@ header nav {
 
 /* Main */
 
-/* Slider (listo, por ahora) */
-
-/* Ok, aprendí que lo que yo quiero es un slider full-bleed*/
+/* Slider */
 
 .slider-wrapper {
     position: relative;
@@ -110,7 +108,7 @@ header nav {
     opacity: 1; /* Entonces pasa del 0.75 de antes, a 1 (100% de opacidad) */
 }
 
-/* Best Sellers (en progreso, falta poco) */
+/* Best Sellers */
 
 #h2bs {
     font-family: "Playfair Display", serif;
@@ -225,7 +223,6 @@ header nav {
     position: relative;
 }
 
-/* Sobre nosotros: asegurar fondo responsivo sin cortar lo importante */
 #imagen-sn {
     display: block;
     width: 100%;
@@ -266,13 +263,12 @@ header nav {
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
-/* ajustar altura en pantallas pequeñas */
 @media (max-width: 639px) {
     #imagen-sn {
         height: 240px;
     }
     #superponer-sn {
-        top: 50%;
+        top: 40%;
         transform: translate(-50%, -45%);
         padding: 12px;
     }
@@ -602,9 +598,10 @@ header nav {
     }
 }
 
-/* celular */
+/* Celular */
 
 @media (max-width: 639px) {
+    
     header {
         padding: 12px 16px;
         align-items: flex-start;
