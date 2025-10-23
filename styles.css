@@ -328,13 +328,18 @@ header nav {
     box-shadow: 0 2px 8px #00000014;
 }
 
+.carrito {
+    overflow-y: auto; /* Permitir scroll */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding-bottom: 0; /* Evitar padding extra al final */
+}
+
 .carrito-items {
-    flex: 0 1 auto; /* Cambiado de flex: 1 */
-    max-height: calc(100vh - 200px); /* Altura máxima calculada */
+    flex: 1 1 auto;
     overflow-y: auto;
-    padding: 10px 0;
-    margin: 10px -20px;
-    padding: 0 20px;
+    max-height: calc(100vh - 200px); /* Altura máxima calculada */
 }
 
 .item {
@@ -441,7 +446,7 @@ header nav {
     bottom: 0;
     background: #F9FAFB;
     border-top: 1px solid #E5E7EB;
-    margin-top: 20px;
+    margin-top: auto;
     width: 100%;
     box-sizing: border-box;
 }
@@ -476,7 +481,7 @@ header nav {
 #finalizar-compra {
     width: 100%;
     padding: 16px;
-    margin-top: 0px;
+    margin-top: 8px;
     border: none;
     border-radius: 8px;
     font-size: 14px;
@@ -641,56 +646,44 @@ header nav {
     .p-sn { font-size: 16px; }
 
     .carrito {
+        overflow-y: auto; 
         display: flex;
         flex-direction: column;
-        padding: 20px;
+        height: 100vh;
+        padding-bottom: 0; 
     }
 
     .carrito-items {
-        flex: 0 1 auto; /* Cambiado de flex: 1 */
-        max-height: calc(100vh - 200px); /* Altura máxima calculada */
+        flex: 1 1 auto;
         overflow-y: auto;
+        max-height: calc(100vh - 200px);
     }
 
     .carrito-resumen {
+        flex: 0 0 auto;
         margin-top: 0;
-        padding: 12px 0;
         position: relative;
-        flex: 0 0 auto; /* Evita que se expanda */
+        padding: 12px 16px;
     }
 
     .carrito-acciones {
         position: relative;
-        bottom: 0;
-        margin-top: 0;
         padding: 16px;
-    }
-
-    .carrito {
-        right: 0;
-        left: 0;
-        width: auto;
-        height: 100vh;
-        z-index: 1500;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-    }
-    .carrito.abierto {
-        transform: translateX(0);
-    }
-
-    .carrito-resumen {
-        margin-top: 0; /* Cambiado de auto a 0 */
-        padding: 12px 0;
-        position: relative; /* Agregado */
-        bottom: auto; /* Agregado */
-    }
-
-    .carrito-acciones {
-        position: relative; /* Cambiado de sticky */
         margin-top: 0;
-        padding: 16px;
     }
+}
 
+.carrito-resumen {
+    padding-bottom: env(safe-area-inset-bottom, 20px);
+}
+
+.botones-articulos, #vaciar-carrito, #finalizar-compra, .qty-btn, .boton {
+    min-height: 40px;
+    touch-action: manipulation;
+}
+
+.foto-articulo img {
+    width: 100%;
+    height: auto;
 }
 
