@@ -1,6 +1,11 @@
 /* Los comentarios que pongo, son para mí y para que a la persona que califique, se le haga más fácil entender el porqué de algunas cosas que hago */
 /* Probablemente ya saben que hace cada cosa, pero supongo que puede ser útil*/
 
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0px;
     background-color: #F9FAFB;
@@ -113,18 +118,25 @@ header nav {
 }
 
 .productos {
-    margin: 0;
-    padding: 0px 20px;
     display: grid;
-    gap: 24px;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 18px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    align-items: start; /* IMPORTANT: alinea items al tope */
+    padding: 0 18px;
+    margin: 0;
 }
 
+.productos > li {
+    display: flex;
+    flex-direction: column;
+}
+
+/* forzar que el artículo ocupe el espacio y que las fotos tengan la misma altura */
 .articulo {
-    background:#ffffff;
-    border:1px solid #e5e7eb;
-    border-radius:12px;
-    overflow:hidden;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 1px;
 }
 
 .a-link-bs {
@@ -137,15 +149,15 @@ header nav {
     transition:.15s; }
 
 .foto-articulo {
-    aspect-ratio:1/1; 
-    background:#f3f4f6;
+    width: 100%;
 }
 
 .foto-articulo img {
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
+    width: 100%;
+    height: 220px; /* misma altura para todas las miniaturas */
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
 }
 
 .h3bs-arts {
@@ -209,11 +221,14 @@ header nav {
     position: relative;
 }
 
+/* Sobre nosotros: asegurar fondo responsivo sin cortar lo importante */
 #imagen-sn {
     display: block;
     width: 100%;
-    height: auto;
-    filter: brightness(0.7); /* Oscurece un poco la imagen para mejor contraste */
+    height: 380px;           /* altura base */
+    object-fit: cover;       /* mantiene cobertura sin distorsionar */
+    object-position: center; /* centra la zona visible */
+    filter: brightness(0.7);
 }
 
 #superponer-sn {
@@ -245,6 +260,18 @@ header nav {
     max-width: 600px;
     margin: 0 auto;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* ajustar altura en pantallas pequeñas */
+@media (max-width: 639px) {
+    #imagen-sn {
+        height: 240px;
+    }
+    #superponer-sn {
+        top: 50%;
+        transform: translate(-50%, -45%);
+        padding: 12px;
+    }
 }
 
 /* Carrito */
@@ -512,3 +539,99 @@ header nav {
 }
 
 /* Responsive */
+
+/* Pantalla medianas (laptops que no son tan grandes, o tablets, aunque no son parte de la consigna) */
+
+@media (min-width: 640px) {
+    .productos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 0 28px;
+    }
+
+    .slider {
+        aspect-ratio: 16 / 5.5;
+    }
+
+    header {
+        padding: 18px 0;
+    }
+}
+
+/* Pantallas Grandes*/
+
+@media (min-width: 1024px) {
+    .productos {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 28px;
+        padding: 0 40px;
+    }
+
+    .slider {
+        aspect-ratio: 16 / 6.5;
+    }
+
+    .logo {
+        width: 220px;
+    }
+}
+
+/* celular */
+
+@media (max-width: 639px) {
+    header {
+        padding: 12px 16px;
+        align-items: flex-start;
+    }
+
+    header nav {
+        position: static;
+        margin-top: 8px;
+    }
+
+    .ul_nav {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .roboto-li, .ul_nav a.roboto-li {
+        font-size: 13px;
+    }
+
+    .productos {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        padding: 0 14px;
+    }
+
+    .botones-articulos {
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+
+    #h3-sn { font-size: 28px; }
+    .p-sn { font-size: 16px; }
+
+    .carrito {
+        width: 100%;
+        right: -100%;
+        border-left: none;
+        padding: 16px;
+    }
+    .carrito.abierto { right: 0; }
+    .carrito-resumen { padding: 12px 0; }
+}
+
+.carrito-resumen {
+    padding-bottom: env(safe-area-inset-bottom, 20px);
+}
+
+.botones-articulos, #vaciar-carrito, #finalizar-compra, .qty-btn, .boton {
+    min-height: 40px;
+    touch-action: manipulation;
+}
+
+.foto-articulo img {
+    width: 100%;
+    height: auto;
+}
+

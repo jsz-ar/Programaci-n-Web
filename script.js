@@ -93,7 +93,7 @@ function obtenerProductos() { // No es la misma que usé en el parcial, pero est
         li.innerHTML = // voy a cambiar lo que sea btn por boton y la posicion de los atributos
             '<div class="item-titulo">' + item.nombre + '</div>' +
             '<div class="item-eliminar">' +
-            '<input class="boton boton-eliminar" type="button" value="🗑️">' +
+            '<input class="boton boton-eliminar" type="button" value="Eliminar">' +
             '</div>' +
             '<div class="item-controles">' +
             '<input class="qty-btn boton-restar" type="button" value="−">' +
