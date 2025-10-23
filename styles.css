@@ -436,11 +436,10 @@ header nav {
     flex-direction: column;
     gap: 12px;
     padding: 16px;
-    position: sticky;
-    bottom: 0;
+    position: static; 
     background: #F9FAFB;
     border-top: 1px solid #E5E7EB;
-    margin-top: auto;
+    margin-top: 0; 
     width: 100%;
     box-sizing: border-box;
 }
@@ -475,7 +474,7 @@ header nav {
 #finalizar-compra {
     width: 100%;
     padding: 16px;
-    margin-top: 8px;
+    margin-top: 0px;
     border: none;
     border-radius: 8px;
     font-size: 14px;
@@ -656,10 +655,19 @@ header nav {
         padding: 12px 0;
     }
 
-    .carrito-acciones { /* Esta corrección es porque en los dispositvos que probé (reales, no desde la compu con el responsive) hay un problema: Los celulares suelen tener botones de navegación abajo, o los navegadores tienen sus propios botones. Entonces, no se ve el botón de finalizar compra*/
-        bottom: auto;
-        padding-bottom: 90px;
+    .carrito-acciones {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px;
+        position: static; 
+        background: #F9FAFB;
+        border-top: 1px solid #E5E7EB;
+        margin-top: 0; 
+        width: 100%;
+        box-sizing: border-box;
     }
+
 }
 
 .carrito-resumen {
